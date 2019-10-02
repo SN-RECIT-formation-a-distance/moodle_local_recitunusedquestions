@@ -13,8 +13,8 @@
 //
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
-$plugin->version   = 2015020901;
-$plugin->release   = '1.0';
-$plugin->maturity  = MATURITY_ALPHA;
+$plugin->version   = 2019100200;
+$plugin->release   = '1.0.1';
+$plugin->maturity  = MATURITY_BETA;
 $plugin->requires  = 2014051200;
 $plugin->component = 'local_unusedquestions';

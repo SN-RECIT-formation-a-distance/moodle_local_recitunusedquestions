@@ -25,14 +25,26 @@ function local_unusedquestions_get_question_bank_search_conditions($caller) {
 class local_unusedquestions_question_bank_search_condition extends core_question\bank\search\condition  {
     protected $where;
     protected $params;
+    protected $onlyused = 0;
 
     const ONLYUSED = 1;
     const ONLYUNUSED = -1;
     const ONLYANY = 0;
 
     public function __construct() {
-        $this->onlyused = optional_param('onlyused', 0, PARAM_INT);
-
+        $params = [];
+        // POST request from mod/quiz/edit.php to lib/ajax/service.php
+        if(isset($GLOBALS['args']['args'][0]['value'])){
+            $queryString = $GLOBALS['args']['args'][0]['value'];
+            $queryString = preg_replace('/^\?/', '', $queryString);
+            parse_str($queryString, $params);
+        }
+        if(isset($params['onlyused'])){
+            $this->onlyused = $params['onlyused'];
+        } else {
+            // GET request from question/edit.php
+            $this->onlyused = optional_param('onlyused', 0, PARAM_INT);
+        }
         if ($this->onlyused != self::ONLYANY) {
             $this->init();
         }
