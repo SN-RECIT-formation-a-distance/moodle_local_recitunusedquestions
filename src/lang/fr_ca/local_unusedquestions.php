@@ -13,8 +13,8 @@
 //
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
-$plugin->version   = 2019100200;
-$plugin->release   = '1.0.1';
-$plugin->maturity  = MATURITY_BETA;
-$plugin->requires  = 2014051200;
-$plugin->component = 'local_unusedquestions';
+
+$string['pluginname'] = 'Questions nutilisées de la banque de questions';
+$string['onlyused'] = 'Seulement celles utilisées';
+$string['onlyunused'] = 'Seulement celles inutilisées';
+$string['usedandunused'] = 'Ensemble de celles utilisées &amp; inutilisées';

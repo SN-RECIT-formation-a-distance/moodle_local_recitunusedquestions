@@ -14,7 +14,14 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-$string['pluginname'] = 'Question bank unused questions';
-$string['onlyused'] = 'Kasutusel olevad';
-$string['onlyunused'] = 'Kasutusel mitteolevad';
-$string['usedandunused'] = 'Kõik';
+
+
+defined('MOODLE_INTERNAL') || die();
+
+$plugin->version   = 2020050100;       // The current module version (Date: YYYYMMDDXX)
+$plugin->release   = 'R1-2020050100';
+$plugin->requires  = 2018050800;    // Requires this Moodle version
+$plugin->component = 'local_unusedquestions';        // Full name of the plugin (used for diagnostics)
+ 
+$plugin->maturity = MATURITY_ALPHA; // MATURITY_ALPHA, MATURITY_BETA, MATURITY_RC or MATURITY_STABLE
+
