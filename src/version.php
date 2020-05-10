@@ -21,7 +21,7 @@ defined('MOODLE_INTERNAL') || die();
 $plugin->version   = 2020050100;       // The current module version (Date: YYYYMMDDXX)
 $plugin->release   = 'R1-2020050100';
 $plugin->requires  = 2018050800;    // Requires this Moodle version
-$plugin->component = 'local_unusedquestions';        // Full name of the plugin (used for diagnostics)
+$plugin->component = 'local_recitunusedquestions';        // Full name of the plugin (used for diagnostics)
  
 $plugin->maturity = MATURITY_ALPHA; // MATURITY_ALPHA, MATURITY_BETA, MATURITY_RC or MATURITY_STABLE
 
