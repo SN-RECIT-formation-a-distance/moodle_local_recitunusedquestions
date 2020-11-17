@@ -13,16 +13,21 @@
 //
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+//namespace core_question\bank\search;
+//namespace local_recitunusedquestions;
+
+use core_question\bank\search\condition;
 defined('MOODLE_INTERNAL') || die;
 
 global $CFG;
+require_once($CFG->dirroot . '/question/classes/bank/search/condition.php');
 require_once($CFG->dirroot . '/question/editlib.php');
 
-function local_unusedquestions_get_question_bank_search_conditions($caller) {
-    return array( new local_unusedquestions_question_bank_search_condition($caller));
+function local_recitunusedquestions_get_question_bank_search_conditions($caller) {
+    return array( new local_recitunusedquestions_question_bank_search_condition($caller));
 }
 
-class local_unusedquestions_question_bank_search_condition extends core_question\bank\search\condition  {
+class local_recitunusedquestions_question_bank_search_condition extends core_question\bank\search\condition  {
     protected $where;
     protected $params;
     protected $onlyused = 0;
@@ -59,12 +64,20 @@ class local_unusedquestions_question_bank_search_condition extends core_question
     }
 
     public function display_options_adv() {
-        echo "<br />\n";
-        $options = array(self::ONLYUNUSED => get_string('onlyunused', 'local_unusedquestions'),
-                self::ONLYUSED => get_string('onlyused', 'local_unusedquestions'));
+        
+        global $CFG;
+        $link1 = $CFG->wwwroot."/local/recitunusedquestions/pix/icon.png";
+        echo '<div class= "card m-1 p-3">';
+       
+        echo '<p class="h3">'.html_writer::empty_tag('img', array('class' => 'icon','src' => $link1, 'alt' => ('alt'))). get_string('pluginname', 'local_recitunusedquestions').'</p>';
+        $options = array(self::ONLYUNUSED => get_string('onlyunused', 'local_recitunusedquestions'),
+                self::ONLYUSED => get_string('onlyused', 'local_recitunusedquestions'));
         $attr = array ('class' => 'searchoptions');
         echo html_writer::select($options, 'onlyused', $this->onlyused,
-                array(self::ONLYANY => get_string('usedandunused', 'local_unusedquestions')), $attr);
+                array(self::ONLYANY => get_string('usedandunused', 'local_recitunusedquestions')), $attr);
+                
+        echo '</div>';
+        echo '<br />';
     }
 
     private function init() {

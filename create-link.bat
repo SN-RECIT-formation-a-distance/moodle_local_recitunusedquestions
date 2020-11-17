@@ -1,5 +1,5 @@
 echo off
-set pluginPath=..\moodle\local\recitunusedquestions
+set pluginPath=..\moodledev39\local\recitunusedquestions
 
 rem remove the current link
 ..\outils\junction -d src

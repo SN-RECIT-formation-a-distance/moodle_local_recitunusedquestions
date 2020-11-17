@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-$string['pluginname'] = 'Questions nutilisées de la banque de questions';
+$string['pluginname'] = 'Questions inutilisées de la banque de questions';
 $string['onlyused'] = 'Seulement celles utilisées';
 $string['onlyunused'] = 'Seulement celles inutilisées';
-$string['usedandunused'] = 'Ensemble de celles utilisées &amp; inutilisées';
+$string['usedandunused'] = 'Questions utilisées &amp; inutilisées';
